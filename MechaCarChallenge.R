@@ -1,0 +1,47 @@
+# Deliverable 1----------
+library(dplyr)
+# Read in csv
+Mecha_mpg_table <- read.csv(file='MechaCar_mpg.csv', check.names=F,stringsAsFactors = F)
+library(ggplot2)
+
+# LR data by mpg
+lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, Mecha_mpg_table)
+
+# Summarize for p and r values
+summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, Mecha_mpg_table))
+
+# Deliverable 2----------
+
+# Read in csv
+Suspension_Coil_table <- read.csv(file='Suspension_Coil.csv', check.names=F,stringsAsFactors = F)
+library(tidyverse)
+?summarize()
+
+# Summarize by PSI
+Summary_Coil_table <- Suspension_Coil_table %>% summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
+
+# Add groupby by Lot
+Lot_Summary_table <- Suspension_Coil_table %>% group_by(Manufacturing_Lot) %>%  summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
+
+# Deliverable 3-----------
+
+# t test on main coil table, set mean to 1500
+t.test(Suspension_Coil_table$PSI, mu=1500)
+
+?t.test()
+
+# create table for specific lot using subset()
+Lot1 <- subset(Suspension_Coil_table, Manufacturing_Lot=='Lot1')
+t.test((Lot1$PSI),mu=1500)
+
+Lot2 <- subset(Suspension_Coil_table, Manufacturing_Lot=='Lot2')
+t.test((Lot2$PSI),mu=1500)
+
+Lot3 <- subset(Suspension_Coil_table, Manufacturing_Lot=='Lot3')
+t.test((Lot3$PSI),mu=1500)
+
+# Do a t.test with subset for each lot 
+#(Suspension_Coil_table$PSI, mu=1500, subset(Suspension_Coil_table$Manufacturing_Lot, Manufacturing_Lot =='Lot1'))
+
+#(Suspension_Coil_table$PSI, mu=1500, subset(Suspension_Coil_table, Manufacturing_Lot =='Lot1'))
+
