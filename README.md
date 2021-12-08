@@ -30,7 +30,7 @@
 
 - For the average consumer, a car is a big investment and they will want to be sure it can perform the tasks required of it. While looking for a specific color or style of car can be enticing, the majority of the time these factors will not be the major selling point of a car. Can my car get me to work and can it do this safely? Is it easy to maintain or will maintenance end up costing more than the initial price? These are the types of questions that need to be answer if MechaCar wants to stay relevant in a competitive marketplace.
 
-- In this analyis I will focus on testing MechCar's safety rating when compared to other manufacturers. Since this would be dealing with a lot of real world numerical data, the ANOVA test would be the best choice for answering this question. The main question would be, "Is there any statistical difference in a car's safety rating based on its manufacturer?" The hypotheses would then be:
+- In this analyis I will focus on testing MechCar's safety rating when compared to other manufacturers. Since this would be dealing with a lot of real world numerical data from mutiple samples, the ANOVA test would be the best choice for answering this question. The main question would be, "Is there any statistical difference in a car's safety rating based on its manufacturer?" The hypotheses would then be:
     - Null: all group's means are equal
     - Alternative: at least one mean is different across the groups
 
