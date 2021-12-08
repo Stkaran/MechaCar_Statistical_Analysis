@@ -40,8 +40,3 @@ t.test((Lot2$PSI),mu=1500)
 Lot3 <- subset(Suspension_Coil_table, Manufacturing_Lot=='Lot3')
 t.test((Lot3$PSI),mu=1500)
 
-# Do a t.test with subset for each lot 
-#(Suspension_Coil_table$PSI, mu=1500, subset(Suspension_Coil_table$Manufacturing_Lot, Manufacturing_Lot =='Lot1'))
-
-#(Suspension_Coil_table$PSI, mu=1500, subset(Suspension_Coil_table, Manufacturing_Lot =='Lot1'))
-
